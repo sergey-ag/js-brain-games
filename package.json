@@ -1,0 +1,17 @@
+{
+  "name": "frontend-project-lvl1",
+  "version": "0.1.0",
+  "description": "Brain games are set of console mini-games.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergey-ag/frontend-project-lvl1.git"
+  },
+  "author": "Sergey Kravchenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergey-ag/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/sergey-ag/frontend-project-lvl1#readme"
+}
