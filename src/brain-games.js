@@ -1,34 +1,32 @@
 import readlineSync from 'readline-sync';
 
-const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
+import * as even from './games/even';
 
-export default () => {
-  const message = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const rounds = 3;
-  const maxNumber = 99;
+const gameMap = {
+  even: {
+    message: even.message,
+    roundsCount: even.roundsCount,
+    getRounds: even.getRounds,
+  },
+};
+
+export default (gameName) => {
+  const game = gameMap[gameName];
 
   console.log('Welcome to the Brain Games!');
-  console.log(message);
+  console.log(game.message);
   const name = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${name}\n`);
 
-  const game = [];
+  const rounds = game.getRounds();
 
-  for (let i = 0; i < rounds; i += 1) {
-    const number = getRandomInt(maxNumber);
-    game[i] = {
-      question: number,
-      answer: number % 2 === 0 ? 'yes' : 'no',
-    };
-  }
-
-  for (let i = 0; i < rounds; i += 1) {
-    console.log(`Question: ${game[i].question}`);
+  for (let i = 0; i < game.roundsCount; i += 1) {
+    console.log(`Question: ${rounds[i].question}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === game[i].answer) {
+    if (answer === rounds[i].answer) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${game[i].answer}'.`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rounds[i].answer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
