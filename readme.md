@@ -4,3 +4,4 @@
 [![Build Status](https://travis-ci.org/sergey-ag/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/sergey-ag/frontend-project-lvl1)
 
 [Brain-even Asciinema](https://asciinema.org/a/N6s1jNrookXyQAmmMI1Uoyhgy)
+[Brain-calc Asciinema](https://asciinema.org/a/l1jiNQsu8L4gQSrdhOAICYGTB)
