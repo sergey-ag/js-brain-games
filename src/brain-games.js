@@ -1,12 +1,18 @@
 import readlineSync from 'readline-sync';
 
 import * as even from './games/even';
+import * as calc from './games/calc';
 
 const gameMap = {
   even: {
     message: even.message,
     roundsCount: even.roundsCount,
     getRounds: even.getRounds,
+  },
+  calc: {
+    message: calc.message,
+    roundsCount: calc.roundsCount,
+    getRounds: calc.getRounds,
   },
 };
 

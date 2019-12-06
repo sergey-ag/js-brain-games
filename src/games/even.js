@@ -1,8 +1,8 @@
+import getRandomInt from '../lib/functions';
+
 const message = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const roundsCount = 3;
-
-const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
 const getRounds = () => {
   const maxNumber = 99;
