@@ -1,4 +1,4 @@
-import getRandomInt from '../lib/functions';
+import { getRandomInt } from '../lib/functions';
 
 const message = 'What is the result of the expression?';
 

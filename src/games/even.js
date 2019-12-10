@@ -1,4 +1,4 @@
-import getRandomInt from '../lib/functions';
+import { getRandomInt } from '../lib/functions';
 
 const message = 'Answer "yes" if the number is even, otherwise answer "no".';
 
