@@ -25,7 +25,7 @@ const getRounds = () => {
   const rounds = [];
 
   for (let i = 0; i < roundsCount; i += 1) {
-    const operation = operations[getRandomInt(operations.length)];
+    const operation = operations[getRandomInt(operations.length) - 1];
     const number1 = getRandomInt(maxNumber);
     const number2 = getRandomInt(maxNumber);
     rounds[i] = {

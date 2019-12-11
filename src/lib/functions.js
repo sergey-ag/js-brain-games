@@ -1,4 +1,4 @@
-const getRandomInt = (max) => Math.floor(Math.random() * (max));
+const getRandomInt = (max) => Math.floor(Math.random() * (max)) + 1;
 
 const gcd = (num1, num2) => (num1 === num2
   ? num1
