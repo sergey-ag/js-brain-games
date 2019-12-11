@@ -3,6 +3,8 @@ import readlineSync from 'readline-sync';
 import * as even from './games/even';
 import * as calc from './games/calc';
 import * as gcd from './games/gcd';
+import * as progression from './games/progression';
+
 
 const gameMap = {
   even: {
@@ -19,6 +21,11 @@ const gameMap = {
     message: gcd.message,
     roundsCount: gcd.roundsCount,
     getRounds: gcd.getRounds,
+  },
+  progression: {
+    message: progression.message,
+    roundsCount: progression.roundsCount,
+    getRounds: progression.getRounds,
   },
 };
 
