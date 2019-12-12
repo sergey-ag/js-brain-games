@@ -4,7 +4,7 @@ import * as even from './games/even';
 import * as calc from './games/calc';
 import * as gcd from './games/gcd';
 import * as progression from './games/progression';
-
+import * as prime from './games/prime';
 
 const gameMap = {
   even: {
@@ -26,6 +26,11 @@ const gameMap = {
     message: progression.message,
     roundsCount: progression.roundsCount,
     getRounds: progression.getRounds,
+  },
+  prime: {
+    message: prime.message,
+    roundsCount: prime.roundsCount,
+    getRounds: prime.getRounds,
   },
 };
 
