@@ -15,7 +15,7 @@ const isPrime = (num) => {
 const maxNumber = 99;
 
 const game = () => {
-  const number = getRandomInt(maxNumber);
+  const number = getRandomInt(1, maxNumber);
   return {
     question: `${number}`,
     answer: isPrime(number) ? 'yes' : 'no',

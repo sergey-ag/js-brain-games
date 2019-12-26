@@ -7,7 +7,7 @@ const isEven = (number) => number % 2 === 0;
 const maxNumber = 99;
 
 const game = () => {
-  const number = getRandomInt(maxNumber);
+  const number = getRandomInt(1, maxNumber);
   return {
     question: number,
     answer: isEven(number) ? 'yes' : 'no',

@@ -13,10 +13,10 @@ const getProgression = (start, step, count = 10) => {
 };
 
 const game = () => {
-  const start = getRandomInt(maxNumber);
-  const step = getRandomInt(maxNumber);
+  const start = getRandomInt(1, maxNumber);
+  const step = getRandomInt(1, maxNumber);
   const progression = getProgression(start, step);
-  const missingMember = getRandomInt(maxNumber - 1);
+  const missingMember = getRandomInt(0, maxNumber - 1);
   const missingValue = progression[missingMember];
 
   progression[missingMember] = '..';

@@ -10,8 +10,8 @@ const gcd = (num1, num2) => (num1 === num2
 const maxNumber = 99;
 
 const game = () => {
-  const number1 = getRandomInt(maxNumber);
-  const number2 = getRandomInt(maxNumber);
+  const number1 = getRandomInt(1, maxNumber);
+  const number2 = getRandomInt(1, maxNumber);
   return {
     question: `${number1} ${number2}`,
     answer: gcd(number1, number2).toString(),

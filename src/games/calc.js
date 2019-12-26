@@ -20,9 +20,9 @@ const operations = [
 const maxNumber = 99;
 
 const game = () => {
-  const operation = operations[getRandomInt(operations.length) - 1];
-  const number1 = getRandomInt(maxNumber);
-  const number2 = getRandomInt(maxNumber);
+  const operation = operations[getRandomInt(0, operations.length - 1)];
+  const number1 = getRandomInt(1, maxNumber);
+  const number2 = getRandomInt(1, maxNumber);
   return {
     question: `${number1} ${operation.char} ${number2}`,
     answer: operation.action(number1, number2).toString(),
