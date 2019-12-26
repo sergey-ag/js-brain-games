@@ -1,1 +1,7 @@
-export { default } from './brain-games';
+export {
+  brainEven,
+  brainCalc,
+  brainGcd,
+  brainProgression,
+  brainPrime,
+} from './brain-games';

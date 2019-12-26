@@ -1,23 +1,17 @@
-import { getRandomInt } from '../lib/functions';
+import getRandomInt from '../lib/functions';
 
 const message = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const roundsCount = 3;
+const isEven = (number) => number % 2 === 0;
 
-const getRounds = () => {
-  const maxNumber = 99;
+const maxNumber = 99;
 
-  const rounds = [];
-
-  for (let i = 0; i < roundsCount; i += 1) {
-    const number = getRandomInt(maxNumber);
-    rounds[i] = {
-      question: number,
-      answer: number % 2 === 0 ? 'yes' : 'no',
-    };
-  }
-
-  return rounds;
+const game = () => {
+  const number = getRandomInt(maxNumber);
+  return {
+    question: number,
+    answer: isEven(number) ? 'yes' : 'no',
+  };
 };
 
-export { message, roundsCount, getRounds };
+export { message, game };

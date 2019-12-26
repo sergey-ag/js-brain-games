@@ -1,24 +1,21 @@
-import { getRandomInt, gcd } from '../lib/functions';
+import getRandomInt from '../lib/functions';
 
 const message = 'Find the greatest common divisor of given numbers.';
 
-const roundsCount = 3;
+const gcd = (num1, num2) => (num1 === num2
+  ? num1
+  : gcd(Math.min(num1, num2), Math.abs(num1 - num2))
+);
 
-const getRounds = () => {
-  const maxNumber = 99;
+const maxNumber = 99;
 
-  const rounds = [];
-
-  for (let i = 0; i < roundsCount; i += 1) {
-    const number1 = getRandomInt(maxNumber);
-    const number2 = getRandomInt(maxNumber);
-    rounds[i] = {
-      question: `${number1} ${number2}`,
-      answer: gcd(number1, number2).toString(),
-    };
-  }
-
-  return rounds;
+const game = () => {
+  const number1 = getRandomInt(maxNumber);
+  const number2 = getRandomInt(maxNumber);
+  return {
+    question: `${number1} ${number2}`,
+    answer: gcd(number1, number2).toString(),
+  };
 };
 
-export { message, roundsCount, getRounds };
+export { message, game };

@@ -1,23 +1,25 @@
-import { getRandomInt, isPrime } from '../lib/functions';
+import getRandomInt from '../lib/functions';
 
 const message = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const roundsCount = 3;
-
-const getRounds = () => {
-  const maxNumber = 99;
-
-  const rounds = [];
-
-  for (let i = 0; i < roundsCount; i += 1) {
-    const number = getRandomInt(maxNumber);
-    rounds[i] = {
-      question: `${number}`,
-      answer: isPrime(number) ? 'yes' : 'no',
-    };
-  }
-
-  return rounds;
+const isPrime = (num) => {
+  if (num === 1) return false;
+  const iter = (divisor) => {
+    if (divisor === 1) return true;
+    if (num % divisor === 0) return false;
+    return iter(divisor - 1);
+  };
+  return iter(Math.floor(Math.sqrt(num)));
 };
 
-export { message, roundsCount, getRounds };
+const maxNumber = 99;
+
+const game = () => {
+  const number = getRandomInt(maxNumber);
+  return {
+    question: `${number}`,
+    answer: isPrime(number) ? 'yes' : 'no',
+  };
+};
+
+export { message, game };

@@ -6,54 +6,39 @@ import * as gcd from './games/gcd';
 import * as progression from './games/progression';
 import * as prime from './games/prime';
 
-const gameMap = {
-  even: {
-    message: even.message,
-    roundsCount: even.roundsCount,
-    getRounds: even.getRounds,
-  },
-  calc: {
-    message: calc.message,
-    roundsCount: calc.roundsCount,
-    getRounds: calc.getRounds,
-  },
-  gcd: {
-    message: gcd.message,
-    roundsCount: gcd.roundsCount,
-    getRounds: gcd.getRounds,
-  },
-  progression: {
-    message: progression.message,
-    roundsCount: progression.roundsCount,
-    getRounds: progression.getRounds,
-  },
-  prime: {
-    message: prime.message,
-    roundsCount: prime.roundsCount,
-    getRounds: prime.getRounds,
-  },
-};
+const roundsCount = 3;
 
-export default (gameName) => {
-  const game = gameMap[gameName];
-
+const run = (message, game) => {
   console.log('Welcome to the Brain Games!');
-  console.log(game.message);
+  console.log(message);
   const name = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${name}\n`);
 
-  const rounds = game.getRounds();
-
-  for (let i = 0; i < game.roundsCount; i += 1) {
-    console.log(`Question: ${rounds[i].question}`);
+  for (let i = 0; i < roundsCount; i += 1) {
+    const data = game();
+    console.log(`Question: ${data.question}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === rounds[i].answer) {
+    if (answer === data.answer) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rounds[i].answer}'.`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${data.answer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
   }
   console.log(`Congratulations, ${name}!`);
+};
+
+const brainEven = () => run(even.message, even.game);
+
+const brainCalc = () => run(calc.message, calc.game);
+
+const brainGcd = () => run(gcd.message, gcd.game);
+
+const brainProgression = () => run(progression.message, progression.game);
+
+const brainPrime = () => run(prime.message, prime.game);
+
+export {
+  brainEven, brainCalc, brainGcd, brainProgression, brainPrime,
 };

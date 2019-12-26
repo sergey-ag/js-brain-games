@@ -1,6 +1,6 @@
 {
   "name": "hexlet-frontend-project-lvl1",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Brain games are set of console mini-games.",
   "keywords" : ["hexlet", "brain-games", "even", "calc", "gcd", "progression", "prime"],
   "main": "dist/index.js",
