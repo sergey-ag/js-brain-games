@@ -1,4 +1,5 @@
 import getRandomInt from '../lib/functions';
+import runGame from '../brain-games';
 
 const message = 'Find the greatest common divisor of given numbers.';
 
@@ -9,7 +10,7 @@ const gcd = (num1, num2) => (num1 === num2
 
 const maxNumber = 99;
 
-const game = () => {
+const getData = () => {
   const number1 = getRandomInt(1, maxNumber);
   const number2 = getRandomInt(1, maxNumber);
   return {
@@ -18,4 +19,4 @@ const game = () => {
   };
 };
 
-export { message, game };
+export default () => runGame(message, getData);

@@ -1,4 +1,5 @@
 import getRandomInt from '../lib/functions';
+import runGame from '../brain-games';
 
 const message = 'What is the result of the expression?';
 
@@ -19,7 +20,7 @@ const operations = [
 
 const maxNumber = 99;
 
-const game = () => {
+const getData = () => {
   const operation = operations[getRandomInt(0, operations.length - 1)];
   const number1 = getRandomInt(1, maxNumber);
   const number2 = getRandomInt(1, maxNumber);
@@ -29,4 +30,4 @@ const game = () => {
   };
 };
 
-export { message, game };
+export default () => runGame(message, getData);

@@ -1,4 +1,5 @@
 import getRandomInt from '../lib/functions';
+import runGame from '../brain-games';
 
 const message = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -6,12 +7,12 @@ const isEven = (number) => number % 2 === 0;
 
 const maxNumber = 99;
 
-const game = () => {
-  const number = getRandomInt(1, maxNumber);
+const getData = () => {
+  const question = getRandomInt(1, maxNumber);
   return {
-    question: number,
-    answer: isEven(number) ? 'yes' : 'no',
+    question,
+    answer: isEven(question) ? 'yes' : 'no',
   };
 };
 
-export { message, game };
+export default () => runGame(message, getData);
